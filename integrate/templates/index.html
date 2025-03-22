@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Watermark Tool</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Rubik+Glitch&family=VT323&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="loader">WATERMARK EMBEDDER/EXTRACTOR</div>
+    <div id="selection" style="display: none;" class="container">
+        <h2 class="head">Select an Option</h2>
+        <button onclick="showEmbedPage()" class="b1">Embed Watermark</button>
+        <button onclick="showExtractPage()" class="b2">Extract Watermark</button>
+    </div>
+
+    <div id="embedPage" class="card1" style="display: none;">
+        <h3 class="emb">Embed Watermark</h3>
+        <form method="post" enctype="multipart/form-data">
+            <input type="hidden" name="action" value="embed">
+            <label for="imageUpload" class="custom">Click here or drop files to upload</label>
+            <input type="file" id="imageUpload" name="image" accept="image/*" class="hidden-input">
+            <input type="text" name="text" placeholder="Watermark Text">
+            <button type="submit" class="box">Embed Watermark</button>
+        </form>
+        <button onclick="goBack()" class="back-btn">Back</button>
+    </div>
+
+    <div id="extractPage" class="card2" style="display: none;">
+        <h3 class="ext">Extract Watermark</h3>
+        <form method="post" enctype="multipart/form-data">
+            <input type="hidden" name="action" value="recover">
+            <label for="fileUpload" class="cus">Click here or drop files to upload</label>
+            <input type="file" id="fileUpload" name="image" accept="image/*" class="hidden-input">
+            <button type="submit" class="box">Extract Watermark</button>
+        </form>
+        <button onclick="goBack()" class="back-btn">Back</button>
+        {% if recovered_message %}
+            <p>Recovered Message: {{ recovered_message }}</p>
+        {% endif %}
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
