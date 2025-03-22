@@ -8,3 +8,4 @@ The Invisible Watermarking Tool allows users to embed and extract hidden message
  - Extract Watermarks: Retrieve the embedded message from a watermarked image.
  - Image Protection: Prevent unauthorized usage and ensure content authenticity.
  - Easy-to-Use Interface: Simple upload and download functionality for embedding and extracting.
+
