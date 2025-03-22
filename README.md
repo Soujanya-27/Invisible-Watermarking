@@ -9,3 +9,12 @@ The Invisible Watermarking Tool allows users to embed and extract hidden message
  - Image Protection: Prevent unauthorized usage and ensure content authenticity.
  - Easy-to-Use Interface: Simple upload and download functionality for embedding and extracting.
 
+
+## Requirements
+
+ - Python 3.x
+ - Flask
+ - OpenCV
+ - NumPy
+ - Pillow
+
